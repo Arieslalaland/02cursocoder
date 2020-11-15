@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 1fr 30%;
+    grid-template-rows: 200px 200px 200px;
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    grid-template-areas:
+        "nav header header"
+        "nav section1 aside"
+        "nav section2 aside"
+        "nav footer footer";
+}
+
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+header {
+    background: #5226EF;
+    grid-area: header;
+}
+
+/* NAV */
+nav {
+    background: #FEB420;
+    grid-area: nav;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* SECTION 1 */
+.rosa {
+background: #C5A3D8;
+grid-area: section1;
+}
+
+/* SECTION 2 */
+
+.verde {
+    background: #45795F;
+    grid-area: section2;
+}
+
+/* ASIDE */
+aside {
+    background:#BE471C;
+    grid-area: aside;
+}
+
+/* FOOTER */
+footer {
+    background: #E6E6E6;
+    grid-area: footer;
+    padding: 24px;
+}
+
+/* MEDIA QUERI*/
+@media screen and (max-width:600px){
+    .body-con-grid {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(10,1fr);
+        grid-template-areas: unset;
+    }
+    nav,
+    header,
+    footer,
+    .rosa,
+    .verde,
+    aside {
+    grid-area: unset;
+}
+    footer {
+        background: chartreuse;
+    }
+}
+
+
+
